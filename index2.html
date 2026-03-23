@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop - Premium Flowers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .flower-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .flower-card:nth-child(1) { animation-delay: 0.1s; }
+        .flower-card:nth-child(2) { animation-delay: 0.2s; }
+        .flower-card:nth-child(3) { animation-delay: 0.3s; }
+        .flower-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .flower-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .flower-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .flower-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .flower-content {
+            padding: 25px;
+        }
+
+        .flower-name {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .flower-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .flower-price {
+            font-size: 1.8em;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌸 Flower Shop 🌺</h1>
+      
+        <p class="subtitle">Premium Fresh Flowers Delivered</p>
+    </header>
+
+    <div class="container">
+        <div class="flower-card">
+            <div class="flower-image">🌹</div>
+            <div class="flower-content">
+                <img src"C:\Users\260033\Downloads\100-red-roses.jpg"
+                <div class="flower-name">Red Roses</div>
+                <div class="flower-description">Beautiful red roses perfect for any occasion. Long-lasting and fragrant.</div>
+                <div class="flower-price">$29.99</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="flower-card">
+            <div class="flower-image">🌻</div>
+            <div class="flower-content">
+                <img src="C:\Users\260033\Downloads\Bouquet of Sunflowers - Search Images.jpg" alt="Sunflowers">
+                <div class="flower-name">Sunflowers</div>
+                <div class="flower-description">Bright sunflowers that bring sunshine to any room. Perfect for summer arrangements.</div>
+                <div class="flower-price">$24.99</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="flower-card">
+            <div class="flower-image">🌷</div>
+            <div class="flower-content">
+                <img src="C:\Users\260033\Downloads\pink-tulips-crispa-hamilton-arletta-cwalina .jpg" alt="Pink Tulips">
+                <div class="flower-name">Tulips</div>
+                <div class="flower-description">Elegant colorful tulips. Perfect for spring celebrations and gifts.</div>
+                <div class="flower-price">$22.99</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="flower-card">
+            <div class="flower-image">🌼</div>
+            <div class="flower-content">
+                <img src "C:\Users\260033\Downloads.DAISY FLOWER.jpg"
+                <div class="flower-name">Daisies</div>
+                <div class="flower-description">Cheerful daisies with fresh white and yellow petals. Brighten up your day.</div>
+                <div class="flower-price">$19.99</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
